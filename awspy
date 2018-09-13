@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import click
+
+from ec2 import *
+
+@click.group()
+def cli():
+    pass
+
+cli.add_command(create_ec2_instance)
+cli.add_command(list_ec2_instances)
+cli.add_command(delete_ec2_instance)
+
+if __name__ == '__main__':
+    cli()
